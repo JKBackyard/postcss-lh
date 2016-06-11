@@ -17,7 +17,7 @@ module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = defaults) => 
       // if is the root selector and if is a font property
       if (decl.parent.parent.params !== 'print' &&
           decl.parent.selector === opts.rootSelector &&
-          decl.prop === 'font') {
+          (decl.prop === 'font' || decl.prop === 'line-height')) {
 
         // Get the line-height
         lineHeight = getLineHeight(decl);
