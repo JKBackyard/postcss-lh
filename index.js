@@ -1,36 +1,11 @@
 const postcss = require('postcss');
+const getLineHeight = require('./lib/getLineHeight');
+const lhToRem = require('./lib/lhToRem');
 
 const defaults = {
   rootSelector: ':root',
   rhythmUnit: 'lh'
 };
-
-/**
- * Gets the font declaration properties.
- * @param  {Object} decl
- * @return {number}
- */
-const getLineHeight = (decl) => {
-
-  // Matches {$1:font-size}{$2:unit}/{$3:line-height}.
-  const fontProps = decl.value.match(/(\d+|\d+?\.\d+)(r?em|px|%)(?:\s*\/\s*)(\d+|\d+?\.\d+)\s+/);
-
-  // Make sure font declaration is valid.
-  if (!fontProps) {
-    throw decl.error('Font declaration is invalid.');
-  }
-
-  // Return the line height
-  return fontProps[3];
-};
-
-/**
- * Transform lh value to rem.
- * @param  {Number} val
- * @param  {Number} lineHeight
- * @return {string}
- */
-const lhToRem = (val, lineHeight) => parseFloat((lineHeight * val).toFixed(3)) + 'rem';
 
 module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = defaults) => {
   let lineHeight;
