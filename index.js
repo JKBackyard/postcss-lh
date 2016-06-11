@@ -20,14 +20,12 @@ const getLineHeight = (decl) => {
 };
 
 /**
- * Gets the rhythm value.
- * @param  {Number} declValue
+ * Transform lh value to rem.
+ * @param  {Number} val
  * @param  {Number} lineHeight
- * @return {Number}
+ * @return {string}
  */
-const getRhythmValue = (declValue, lineHeight) => {
-  return lineHeight * parseFloat(declValue) || 1;
-};
+const lhToRem = (val, lineHeight) => parseFloat((lineHeight * val).toFixed(3)) + 'rem';
 
 module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = { }) => {
   const rootSelector = opts.rootSelector || ':root';
@@ -37,13 +35,13 @@ module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = { }) => {
   return (css) => {
     css.walkDecls((decl) => {
 
-      // Check if the declaration is a 'font' property,
-      // if it's inside the root selector and isn't inside a print media query
+      // Check if the declaration is not inside the a print media query
+      // if is the root selector and if is a font property
       if (decl.parent.parent.params !== 'print' &&
           decl.parent.selector === rootSelector &&
           decl.prop === 'font') {
 
-        // Get the line-height of the declaration
+        // Get the line-height
         lineHeight = getLineHeight(decl);
       }
 
@@ -53,8 +51,8 @@ module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = { }) => {
         // RegExp to capture declaration value
         const regexp = new RegExp('\\d*\\.?\\d+' + rhythmUnit, 'gi');
 
-        // Replace the declaration value with the new unit value and append the 'rem' unit
-        decl.value = decl.value.replace(regexp, ($1) => getRhythmValue($1, lineHeight) + 'rem');
+        // Replace the current declaration value with the transformed value
+        decl.value = decl.value.replace(regexp, (val) => lhToRem(parseFloat(val), lineHeight));
       }
     });
   };
