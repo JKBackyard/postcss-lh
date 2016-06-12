@@ -1,6 +1,6 @@
 # postcss-lh
 
-PostCSS plugin to define a lh unit based on the line height, used for vertical rhythm in a web layout.
+PostCSS plugin to define a `lh` unit based on the line height, used for vertical rhythm in a web layout.
 
 You can find more information about vertical rhythm in this great article by Zell Liew: http://zellwk.com/blog/why-vertical-rhythms/
 
