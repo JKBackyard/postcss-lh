@@ -7,7 +7,7 @@ const defaults = {
   rhythmUnit: 'lh'
 };
 
-module.exports = postcss.plugin('postcss-vertical-rhythm', (opts = defaults) => {
+module.exports = postcss.plugin('postcss-lh', (opts = defaults) => {
   let lineHeight;
 
   return (css) => {
