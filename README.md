@@ -61,6 +61,13 @@ it will use `:root`.
 
 The unit to be used in your CSS.
 
+### `lineHeight`
+
+- Type: `number`
+- Default: `1.5`
+
+The default line height. Used **only** when a line height definition in the root element is not found.
+
 ## Acknowledgements
 
 This project is based on [postcss-vertical-rhythm](https://github.com/markgoodyear/postcss-vertical-rhythm) by Mark Goodyear but
