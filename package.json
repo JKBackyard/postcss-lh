@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jameskolce/postcss-lh.git"
+    "url": "https://github.com/kolcethompsonco/postcss-lh.git"
   },
   "dependencies": {
     "postcss": "^5.0.21"
