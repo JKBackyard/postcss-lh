@@ -9,11 +9,13 @@ const defaults = {
 };
 
 module.exports = postcss.plugin('postcss-lh', (opts = defaults) => {
-  return (css) => {
-    const lineHeight = getLineHeight(css, opts) || opts.lineHeight;
-    const lhReg = new RegExp('\\d*\\.?\\d+' + opts.rhythmUnit, 'gi');
+  const options = Object.assign(defaults, opts)
 
-    css.replaceValues(lhReg, {fast: opts.rhythmUnit}, (val) => {
+  return (css) => {
+    const lineHeight = getLineHeight(css, options) || options.lineHeight;
+    const lhReg = new RegExp('\\d*\\.?\\d+' + options.rhythmUnit, 'gi');
+
+    css.replaceValues(lhReg, {fast: options.rhythmUnit}, (val) => {
       return lhToRem(parseFloat(val), lineHeight);
     });
   };
