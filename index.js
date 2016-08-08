@@ -10,7 +10,7 @@ const defaults = {
 
 module.exports = postcss.plugin('postcss-lh', (opts) => {
   opts = opts === undefined ? defaults : opts;
-  const options = Object.assign(defaults, opts)
+  const options = Object.assign(defaults, opts);
 
   return (css) => {
     const lineHeight = getLineHeight(css, options) || options.lineHeight;
