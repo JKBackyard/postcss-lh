@@ -1,6 +1,6 @@
 ![PostCSS-LH](http://i.imgur.com/a30mYsF.png)
 
-# postcss-lh [![Build Status](https://travis-ci.org/KolceThompsonCo/postcss-lh.svg?branch=master)](https://travis-ci.org/KolceThompsonCo/postcss-lh)
+# postcss-lh [![Build Status](https://travis-ci.org/jameskolce/postcss-lh.svg?branch=master)](https://travis-ci.org/jameskolce/postcss-lh)
 
 PostCSS plugin that defines a `lh` unit based on the root line-height, used for vertical rhythm in a web layout.
 
