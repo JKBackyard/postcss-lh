@@ -6,7 +6,7 @@ exports.default = (css, opts) => {
     // Walk over all the root selectors
     css.walkRules(opts.rootSelector, rule => {
         // Omit the process if the selector is inside a print media query
-        if (rule.parent.params === 'print')
+        if (rule.parent && rule.parent.params === 'print')
             return;
         // Walk over all the font or line-height properties
         rule.walkDecls(/font$|line-height/, decl => {
