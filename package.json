@@ -20,7 +20,7 @@
     "url": "https://github.com/jameskolce/postcss-lh.git"
   },
   "dependencies": {
-    "postcss": "^5.0.21"
+    "postcss": "^5.2.17"
   },
   "devDependencies": {
     "tape": "^4.5.1"

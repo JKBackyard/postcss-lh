@@ -6,7 +6,7 @@ const actual = (file) => {
   const css = fs.readFileSync(`test/fixtures/${file}.css`, 'utf8');
 
   return postcss([
-    require('../')
+    require('../dist/index')
   ]).process(css).css.replace(/\s+/g, '');
 };
 
