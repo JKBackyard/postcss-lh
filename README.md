@@ -4,7 +4,7 @@
 
 PostCSS plugin that defines a `lh` unit based on the root line-height, used for vertical rhythm in a web layout.
 
-You can find more information about vertical rhythm in this great article by Zell Liew: http://zellwk.com/blog/why-vertical-rhythms/
+Built for [Concise CSS](http://concisecss.com).
 
 **Write this:**
 
@@ -54,7 +54,7 @@ See [PostCSS](https://github.com/postcss/postcss) docs for examples for your env
 The selector where the line height is set. You can use `html` or `body` for example, but by default
 it will use `:root`.
 
-### `rhythmUnit`
+### `unit`
 
 - Type: `string`
 - Default: `lh`
@@ -67,19 +67,6 @@ The unit to be used in your CSS.
 - Default: `1.5`
 
 The default line height. Used **only** when a line height definition in the root element is not found.
-
-## Acknowledgements
-
-This project is based on [postcss-vertical-rhythm](https://github.com/markgoodyear/postcss-vertical-rhythm) by Mark Goodyear but
-with several changes, including:
-
-- Use of `lh` instead of `vr`.
-- Transformation of `lh` units to `rem` instead of `px`.
-- Support for root media queries. Thanks to the use of `rem` units.
-- Support for both `font` (shorthand) and `line-height` declarations.
-- This plugin omits `font` and `line-height` declarations inside **print** media queries.
-- It looks for `:root` by default instead of `body`
-- The codebase has been also optimized.
 
 ## License
 

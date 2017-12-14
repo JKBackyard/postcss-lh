@@ -1,6 +1,6 @@
 {
   "name": "postcss-lh",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "description": "PostCSS plugin to define a lh unit based on the line height for vertical rhythm",
   "keywords": [
     "postcss",
@@ -13,6 +13,7 @@
     "type",
     "typography"
   ],
+  "main": "dist/index.js",
   "author": "James Kolce <contact@jameskolce.com>",
   "license": "MIT",
   "repository": {
@@ -23,9 +24,11 @@
     "postcss": "^5.2.17"
   },
   "devDependencies": {
-    "tape": "^4.5.1"
+    "tape": "^4.5.1",
+    "typescript": "^2.5.3"
   },
   "scripts": {
-    "test": "tape test"
+    "test": "tape test",
+    "build": "tsc"
   }
 }
