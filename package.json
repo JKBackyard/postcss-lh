@@ -1,6 +1,6 @@
 {
   "name": "postcss-lh",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "PostCSS plugin to define a lh unit based on the line height for vertical rhythm",
   "keywords": [
     "postcss",
